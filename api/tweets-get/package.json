@@ -1,0 +1,11 @@
+{
+  "name": "tweets-get",
+  "version": "1.0.0",
+  "description": "lambda for GET /tweets api endpoint",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jordan Sim-Smith",
+  "license": "ISC"
+}
