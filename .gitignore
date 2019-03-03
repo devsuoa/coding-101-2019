@@ -64,4 +64,7 @@ typings/
 *.swp
 
 # aws sam build directory
-aws/.aws-sam/
+api/.aws-sam/
+
+# aws sam packaged template
+**/packaged.yaml
