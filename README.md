@@ -9,6 +9,15 @@ The API is hosted on AWS using the AWS Serverless Application Model (SAM) which
 is a superset of CloudFormation. The API uses make to handle build and
 deployment steps.
 
+### Documentation
+API documenation is written using swagger (Open Api). View the raw
+specification `api/swagger.yaml` or use the swagger-ui for a more readable
+format on `localhost:80`
+
+```bash
+docker-compose up
+```
+
 ### Dependencies
 To build/run/deploy the API, the awscli and aws-sam-cli must first be
 installled. Note that python 2.7, 3.6 or 3.7 must be installed as well as

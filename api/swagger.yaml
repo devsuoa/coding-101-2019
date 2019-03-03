@@ -1,0 +1,91 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: DEVS Coding 101 API
+host: some.long.aws.generated.url
+basePath: /v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /tweets:
+    get:
+      summary: List a user's recent tweets
+      operationId: getTweets
+      tags:
+        - twitter
+      parameters:
+        - name: display_name
+          in: query
+          description: display name of the user whose tweets to return
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Tweets'
+        400:
+          description: Bad Request
+        500:
+          description: Internal Server Error
+          
+  /sentiment:
+    put:
+      summary: Analyse sentiment of a list of texts
+      operationId: getSentiment
+      tags:
+        - aws
+      parameters:
+        - name: body
+          in: body
+          description: list of texts to analyse
+          required: true
+          schema:
+            $ref: '#/definitions/Texts'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Sentiments'
+        400:
+          description: Bad Request
+        500:
+          description: Internal Server Error
+
+definitions:
+  Tweets:
+    type: object
+    properties:
+      tweets:
+        type: array
+        items:
+          type: string
+
+  Texts:
+    type: object
+    properties:
+      texts:
+        type: array
+        items:
+          type: string
+
+  Sentiments:
+    type: object
+    properties:
+      sentiments:
+        type: array
+        items:
+          type: object
+          properties:
+            mixed:
+              type: number
+            positive:
+              type: number
+            neutral:
+              type: number
+            negative:
+              type: number
