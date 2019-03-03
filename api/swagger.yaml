@@ -34,8 +34,12 @@ paths:
           description: Internal Server Error
           
   /sentiment:
-    put:
+    post:
       summary: Analyse sentiment of a list of texts
+      description: >
+        This HTTP method is not GET as it must contain the tweets in a message body.
+        As there is no standardised HTTP method for a Read operation with a message body,
+        POST is used as reccomended by the HTTP 1.1 standard as the default method.
       operationId: getSentiment
       tags:
         - aws
