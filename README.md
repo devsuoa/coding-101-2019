@@ -6,7 +6,8 @@ node module which acts as an SDK for the API.
 
 ## API
 The API is hosted on AWS using the AWS Serverless Application Model (SAM) which
-is a superset of CloudFormation.
+is a superset of CloudFormation. The API uses make to handle build and
+deployment steps.
 
 ### Dependencies
 To build/run/deploy the API, the awscli and aws-sam-cli must first be
@@ -22,7 +23,6 @@ pip install --user --upgrade aws-sam-cli
 The API can be tested locally at `localhost:3000`. 
 
 ```bash
-cd api
 sam build
 sam local start-api
 ```
@@ -31,21 +31,14 @@ sam local start-api
 The API can be deployed as follows.
 
 ```bash
-cd api
-sam build
-sam package --template-file template.yaml \
---output-template-file packaged.yaml \
---s3-bucket YOUR-BUCKET-HERE
-sam deploy --template-file packaged.yaml \
---stack-name STACK-NAME \
---capabilities CAPABILITY_NAMED_IAM
+make clean build package deploy
 ```
 
 ### Undeployment
 Similarly, the API can be undeployed.
 
 ```bash
-sam undeploy --stack-name STACK-NAME
+make undeploy
 ```
 
 ## Module
