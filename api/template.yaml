@@ -36,6 +36,7 @@ Resources:
           Properties:
             Path: /sentiment
             Method: POST
+            RestApiId: !Ref Api
       Policies:
-        - ComprehendBasicAccessPolicy
+        - ComprehendBasicAccessPolicy: {}
 
