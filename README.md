@@ -39,7 +39,7 @@ make local
 The API can be deployed as follows.
 
 ```bash
-make clean build package deploy
+make package deploy
 ```
 
 ### Undeployment
