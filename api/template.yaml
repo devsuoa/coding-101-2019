@@ -36,4 +36,6 @@ Resources:
           Properties:
             Path: /sentiment
             Method: POST
+      Policies:
+        - ComprehendBasicAccessPolicy
 
