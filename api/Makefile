@@ -1,15 +1,26 @@
-.PHONY: clean build package deploy undeploy
+.PHONY: clean deps local package deploy undeploy
 
 STACK-NAME=devs-coding-101
 BUCKET=devs-deploys
+ITEMS=tweets-get sentiment-post
 
 clean:
-	rm -rf .aws-sam
+	rm -rf .aws-sam 
+	for ITEM in ${ITMES}; do \
+		rm -rf $$ITEM/node_modules; \
+	done
 
-build:
-	sam build
+deps:
+	for ITEM in ${ITEMS}; do \
+		cd $$ITEM; \
+		npm install --only=prod; \
+		cd ..; \
+	done
 
-package:
+local: clean deps
+	sam local start-api
+		
+package: clean deps
 	aws cloudformation package \
 	--template-file template.yaml \
 	--output-template-file packaged.yaml \

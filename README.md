@@ -32,8 +32,7 @@ pip install --user --upgrade aws-sam-cli
 The API can be tested locally at `localhost:3000`. 
 
 ```bash
-sam build
-sam local start-api
+make local
 ```
 
 ### Deployment
