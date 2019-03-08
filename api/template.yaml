@@ -8,6 +8,12 @@ Globals:
     Runtime: nodejs8.10
     Handler: app.handler
 
+Parameters:
+  twitterApiKey:
+    Type: String
+  twitterSecretKey:
+    Type: String
+
 Resources:
   Api:
     Type: AWS::Serverless::Api
@@ -25,6 +31,10 @@ Resources:
             Path: /tweets
             Method: GET
             RestApiId: !Ref Api
+      Environment:
+        Variables:
+          TWITTER_API_KEY: !Sub ${twitterApiKey}
+          TWITTER_SECRET_KEY: !Sub ${twitterSecretKey}
 
   SentimentPostFunction:
     Type: AWS::Serverless::Function
