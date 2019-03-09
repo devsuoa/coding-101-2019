@@ -1,0 +1,14 @@
+{
+  "name": "coding101module",
+  "version": "1.1.7",
+  "description": "Module for coding 101",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sync-request": "^6.0.0"
+  }
+}
