@@ -1,0 +1,14 @@
+{
+  "name": "coding-101-example",
+  "version": "1.0.0",
+  "description": "Example for the coding 101 twitter analyser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jordan Sim-Smith",
+  "license": "ISC",
+  "dependencies": {
+    "coding101module": "^1.1.8"
+  }
+}
