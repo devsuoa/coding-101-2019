@@ -1,7 +1,7 @@
 # coding-101
 Library used for the DEVS coding 101 workshop. The library consists of two
 parts. The `api` directory contains a REST API used to interact with AWS
-services such as Comprehend and Rekognition. The `client` directory contains a
+services such as Comprehend. The `client` directory contains a
 node module which acts as an SDK for the API.
 
 
