@@ -1,8 +1,19 @@
 # coding-101
 Library used for the DEVS coding 101 workshop. The library consists of two
 parts. The `api` directory contains a REST API used to interact with AWS
-services such as Comprehend and Rekognition. The `module` directory contains a
+services such as Comprehend and Rekognition. The `client` directory contains a
 node module which acts as an SDK for the API.
+
+
+## JavaScript Resources
+
+Interested in learning more JavaScript? Take a look at the following links:
+
+- https://watchandcode.com/ (One of the best beginner JavaScript resources out there)
+- https://www.sololearn.com/Play/JavaScript (Great beginner JavaScript resource that you can use from your phone)
+- https://github.com/getify/You-Dont-Know-JS (One of the best intermediate->advanced JavaScript resources)
+
+---
 
 ## API
 The API is hosted on AWS using the AWS Serverless Application Model (SAM) which
